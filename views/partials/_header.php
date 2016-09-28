@@ -12,13 +12,13 @@
   </span>
 
   <div class="nav-right nav-menu">
-    <a class="nav-item" href="views/new-entry.php">
+    <a class="nav-item" href="../controle-agrotoxicos/views/new-entry.php">
       Nova Entrada
     </a>
-    <a class="nav-item" href="#">
-      Saida
+    <a class="nav-item" href="views/new-dropoff.php">
+      Nova Saida
     </a>
-    <a class="nav-item" href="#">
+    <a class="nav-item" href="views/balance.php">
       Relatorios
     </a>
 
