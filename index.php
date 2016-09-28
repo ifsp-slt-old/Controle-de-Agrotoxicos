@@ -8,7 +8,7 @@
 
 		<div class="container">
 		  <div class="notification">
-		    <h3>Bem Vindo ao nosso sistema</h3>
+				<span class="title"><h3>Home page</h3></span>
 		  </div>
 		</div>
 

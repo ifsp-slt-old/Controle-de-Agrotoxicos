@@ -23,7 +23,7 @@
     </a>
 
     <span class="nav-item">
-      <a class="button is-info" href="#">
+      <a class="button is-info" href="/controle-agrotoxicos/views/login.php">
         <span>Logout</span>
       </a>
     </span>

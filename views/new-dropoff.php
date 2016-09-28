@@ -8,6 +8,7 @@
 		<?php include_once("partials/_header.php"); ?>
 
     <div class="container">
+			<span class="title"><h3>Nova Saída</h3></span>
       <form action="" method="POST" class="margin-top-10">
         <p class="control">
           <input class="input" type="text" placeholder="Loading input">
