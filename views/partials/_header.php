@@ -1,6 +1,6 @@
 <nav class="nav">
   <div class="nav-left">
-    <a class="nav-item is-active" href="#">
+    <a class="nav-item is-active" href="/controle-agrotoxicos">
       Home
     </a>
   </div>
@@ -12,13 +12,13 @@
   </span>
 
   <div class="nav-right nav-menu">
-    <a class="nav-item" href="../controle-agrotoxicos/views/new-entry.php">
+    <a class="nav-item" href="/controle-agrotoxicos/views/new-entry.php">
       Nova Entrada
     </a>
-    <a class="nav-item" href="views/new-dropoff.php">
+    <a class="nav-item" href="/controle-agrotoxicos/views/new-dropoff.php">
       Nova Saida
     </a>
-    <a class="nav-item" href="views/balance.php">
+    <a class="nav-item" href="/controle-agrotoxicos/views/balance.php">
       Relatorios
     </a>
 
