@@ -14,7 +14,7 @@
         <p class="control has-icon margin-top-10">
           <input class="input is-medium" type="password" placeholder="Password">
           <i class="fa fa-lock"></i>
-        </p>
+        </p> p
         <p class="control">
           <button class="button is-info" type="submit">
             Entrar
