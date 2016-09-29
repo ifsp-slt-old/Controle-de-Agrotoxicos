@@ -1,8 +1,8 @@
 <html>
-	<header>
+	<head>
     <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-	</header>
+	</head>
 	<body>
   	<?php include_once("views/partials/_header.php"); ?>
 

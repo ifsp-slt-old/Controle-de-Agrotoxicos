@@ -1,22 +1,22 @@
 <html>
-	<header>
+	<head>
     <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	</header>
+
+		<script type="text/javascript" src="../js/balance.js"></script>
+	</head>
 	<body>
 		<?php include_once("partials/_header.php"); ?>
-
     <div class="container">
-      <form action="" method="POST" class="margin-top-10">
-        <p class="control">
-          <input class="input" type="text" placeholder="Loading input">
-        </p>
-        <p class="control">
-          <textarea class="textarea" placeholder="Loading textarea"></textarea>
-        </p>
-      </form>
+			<span class="title"><h3>Relátorios</h3></span>
+			<span onclick="showEntry()">Entradas</span>
+			<div id="entry" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
+</br>
+			<span onclick="showDropoff()">Saidas</span>
+			<div id="dropoff" style="display:none"><?php include_once("partials/_header.php"); ?></div>
     </div>
 
 	</body>
+
 </html>

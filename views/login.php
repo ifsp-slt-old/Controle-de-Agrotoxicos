@@ -1,9 +1,9 @@
 <html>
-	<header>
+	<head>
     <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	</header>
+	</head>
 	<body>
     <div class="container">
       <form  class="margin-top-10">
