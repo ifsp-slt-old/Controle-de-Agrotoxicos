@@ -8,11 +8,12 @@
 	</head>
 	<body>
 		<?php include_once("partials/_header.php"); ?>
-    <div class="container">
+
+    <div class="container margin-top-20">
 			<span class="title"><h3>Relátorios</h3></span>
 			<span onclick="showEntry()">Entradas</span>
 			<div id="entry" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
-</br>
+			</br>
 			<span onclick="showDropoff()">Saidas</span>
 			<div id="dropoff" style="display:none"><?php include_once("partials/_header.php"); ?></div>
     </div>

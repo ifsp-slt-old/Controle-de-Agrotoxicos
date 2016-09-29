@@ -3,11 +3,11 @@
     <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	</head>
+	</header>
 	<body>
 		<?php include_once("partials/_header.php"); ?>
 
-    <div class="container">
+    <div class="container margin-top-20">
 			<span class="title"><h3>Nova Entrada</h3></span>
       <form action="" method="POST" class="margin-top-10">
         <p class="control">

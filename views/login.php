@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	</head>
 	<body>
-    <div class="container">
+    <div class="container margin-top-20">
       <form  class="margin-top-10">
         <p class="control has-icon margin-top-10">
           <input class="input is-medium" type="email" placeholder="Email">
