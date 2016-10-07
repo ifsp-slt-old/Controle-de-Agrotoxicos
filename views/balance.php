@@ -15,7 +15,7 @@
 			<div id="entry" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
 			</br>
 			<span onclick="showDropoff()">Saidas</span>
-			<div id="dropoff" style="display:none"><?php include_once("partials/_header.php"); ?></div>
+			<div id="dropoff" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
     </div>
 
 	</body>
