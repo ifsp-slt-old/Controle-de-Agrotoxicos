@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS ctrl_agrotoxicos.Requisicao (
   tipoRequisicao CHAR(1) NOT NULL,
   dataRequisicao DATE NOT NULL,
   principioAtivoReq VARCHAR(45) NULL,
-  concentraçãoReq VARCHAR(45) NULL,
+  concentracaoReq VARCHAR(45) NULL,
   formulacaoReq VARCHAR(45) NULL,
   undMedidaReq VARCHAR(3) NULL,
   qtdAplicacaoReq FLOAT NULL,
