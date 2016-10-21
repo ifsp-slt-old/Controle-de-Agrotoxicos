@@ -12,9 +12,9 @@
     private $tipoEmbalagemReq;
     private $qtdEmbalagemReq;
 
-    function __construct($tipoRequisicao, $dataRequisicao, $principioAtivoReq, $concentracaoReq,
-                         $formulacaoReq, $undMedidaReq, $qtdAplicacaoReq, $nfNumEntradaReq, $tipoEmbalagemReq, $qtdEmbalagemReq) {
-                           
+    function __construct($tipoRequisicao, $dataRequisicao, $principioAtivoReq = null, $concentracaoReq = null, $formulacaoReq = null,
+                         $undMedidaReq = null, $qtdAplicacaoReq = null, $nfNumEntradaReq = null, $tipoEmbalagemReq = null, $qtdEmbalagemReq = null) {
+
       $this->tipoRequisicao = $tipoRequisicao;
       $this->dataRequisicao = $dataRequisicao;
       $this->principioAtivoReq = $principioAtivoReq;
