@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS ctrl_agrotoxicos.Entrada (
   dataValEntrada DATE NOT NULL,
   dataEntrada DATETIME NOT NULL,
   qtdAtualEntrada FLOAT UNSIGNED NOT NULL,
-  stattusUsoEntrada CHAR(1) NOT NULL,
+  statusUsoEntrada CHAR(1) NOT NULL,
   AgtxUnidade_idAgtxUnidade INT NOT NULL,
   AgtxUnidade_Fabricante_idFabricante INT NOT NULL,
   AgtxUnidade_Fornecedor_idFornecedor INT NOT NULL,
