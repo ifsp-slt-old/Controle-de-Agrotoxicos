@@ -3,7 +3,6 @@
     <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script type="text/javascript" src="../jquery-3.1.1.min.js" ></script>
 	</head>
 	<body>
     <div class="container margin-top-20">
@@ -17,23 +16,22 @@
           <i class="fa fa-lock"></i>
         </p>
         <p class="control">
-          <input class="button is-info" type="submit" id="login_action">
+          <input class="button is-info" type="submit">
             Entrar
           </input>
         </p>
       </form>
-	  
-	
+
+
     </div>
 
 	</body>
-	
+
 	<?php
-	include_once('../controllers/login-controller.php');
-	if(!empty($_POST)){
-		$controller = new LoginController();
-		$controller->do_login($_POST["email_user"], $_POST["pass_user"]);
-	}
-	
+		include_once('../controllers/login-controller.php');
+		if(!empty($_POST)){
+			$controller = new LoginController();
+			$controller->do_login($_POST["email_user"], $_POST["pass_user"]);
+		}
 	?>
 </html>
