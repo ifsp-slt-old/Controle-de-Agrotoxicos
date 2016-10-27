@@ -16,15 +16,12 @@
           <i class="fa fa-lock"></i>
         </p>
         <p class="control">
-          <input class="button is-info" type="submit">
+          <button class="button is-info" type="submit">
             Entrar
-          </input>
+          </button>
         </p>
       </form>
-
-
     </div>
-
 	</body>
 
 	<?php
