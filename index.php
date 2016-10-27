@@ -9,6 +9,11 @@
 		<div class="container">
 		  <div class="notification">
 				<span class="title"><h3>Home page</h3></span>
+
+<?php
+	// session_start();
+	echo $_SESSION['nomeUsuario'];
+?>
 		  </div>
 		</div>
 

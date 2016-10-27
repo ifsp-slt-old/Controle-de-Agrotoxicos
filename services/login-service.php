@@ -5,7 +5,7 @@
 
     function __construct(){
       try {
-          //Faz conexao
+          //Faz conexao com o banco
           $this->dbh = new PDO("mysql:host=127.0.0.1;port=8889;dbname=ctrl_agrotoxicos", 'root', 'root');
       } catch (PDOException $e) {
           print "Error!: " . $e->getMessage() . "<br/>";
@@ -23,6 +23,8 @@
       if(!$result){ //Verifica se existe o usuario
         echo "<span style='color:red'> Usuario/Senha invalidos</span>";
       } else {
+        //Inicia a sessao
+        session_start();
         //Salva sessão do usuario
         $_SESSION['nomeUsuario'] = $results['nomeUsuario'];
         $_SESSION['idUsuario'] = $results['idUsuario'];
