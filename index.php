@@ -1,3 +1,7 @@
+<?php
+	// Inicia sessao
+	session_start();
+?>
 <html>
 	<head>
     <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
@@ -5,8 +9,6 @@
 	</head>
 	<body>
   	<?php
-			session_start();
-
 		 include_once("views/partials/_header.php");
 	  ?>
 
@@ -15,7 +17,6 @@
 				<span class="title"><h3>Home page</h3></span>
 
 				<?php
-				echo 'dasdsa';
 					echo $_SESSION['nomeUsuario'];
 				?>
 		  </div>

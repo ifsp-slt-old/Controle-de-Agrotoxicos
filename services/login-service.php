@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   class LoginService{
 
     private $dbh;
@@ -14,7 +16,6 @@
     }
 
     public function do_login($email, $senha){
-      // session_start();
       //realiza query
       $sql = $this->dbh->query("SELECT * from `usuario` WHERE loginUsuario = '$email' AND senhaUsuario = '$senha'");
       $result = $sql->fetch();
@@ -23,13 +24,10 @@
       if(!$result){ //Verifica se existe o usuario
         echo "<span style='color:red'> Usuario/Senha invalidos</span>";
       } else {
-        //Inicia a sessao
-        session_start();
         //Salva sessão do usuario
-        $_SESSION['nomeUsuario'] = $results['nomeUsuario'];
-        $_SESSION['idUsuario'] = $results['idUsuario'];
-        $_SESSION['loginUsuario'] = $results['loginUsuario'];
-
+        $_SESSION['nomeUsuario'] = $result['nomeUsuario'];
+        $_SESSION['idUsuario'] = $result['idUsuario'];
+        $_SESSION['loginUsuario'] = $result['loginUsuario'];
         //Realiza o redirect via javascript
         echo '<script>window.location.href = "../index.php";</script>';
       }
