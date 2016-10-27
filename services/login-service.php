@@ -20,19 +20,16 @@
       $result = $sql->fetch();
       $this->dbh = null;
 
-      if(!$result){
-        print_r($result);
+      if(!$result){ //Verifica se existe o usuario
         echo "<span style='color:red'> Usuario/Senha invalidos</span>";
       } else {
-        print_r($result);
-        echo count($result);
+        //Salva sessão do usuario
+        $_SESSION['nomeUsuario'] = $results['nomeUsuario'];
+        $_SESSION['idUsuario'] = $results['idUsuario'];
+        $_SESSION['loginUsuario'] = $results['loginUsuario'];
 
-
-        //COMO OBRIGATORIAMENTE O SELECT TRAZ APENAS 1 REGISTRO
-        //PODEMOS SETAR FIXAMENTE AS VARIAVEIS
-        // $email_bd = $sql['loginUsuario']; //CASO NÃO FUNCIONE, MUDE PARA $sql->LoginUsuario;
-        // $pass_bd =  $sql['senhaUsuario'];
-        header("Location: ../views/index.php"); //DIRECIONA PARA A INDEX DO SITE (ALTERAR CAMINHO)
+        //Realiza o redirect via javascript
+        echo '<script>window.location.href = "../index.php";</script>';
       }
 
     }
