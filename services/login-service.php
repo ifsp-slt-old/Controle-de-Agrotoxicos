@@ -14,7 +14,7 @@
     }
 
     public function do_login($email, $senha){
-
+      // session_start();
       //realiza query
       $sql = $this->dbh->query("SELECT * from `usuario` WHERE loginUsuario = '$email' AND senhaUsuario = '$senha'");
       $result = $sql->fetch();
