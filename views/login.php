@@ -8,7 +8,7 @@
     <div class="container margin-top-20">
       <form class="margin-top-10" method="POST">
         <p class="control has-icon margin-top-10">
-          <input class="input is-medium" type="email" placeholder="Email" name="email_user" id="email_user">
+          <input class="input is-medium" type="text" placeholder="Login" name="login_user" id="login_user">
           <i class="fa fa-envelope"></i>
         </p>
         <p class="control has-icon margin-top-10">
@@ -28,7 +28,7 @@
 		include_once('../controllers/login-controller.php');
 		if(!empty($_POST)){
 			$controller = new LoginController();
-			$controller->do_login($_POST["email_user"], $_POST["pass_user"]);
+			$controller->do_login($_POST["login_user"], $_POST["pass_user"]);
 		}
 	?>
 </html>

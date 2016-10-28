@@ -1,6 +1,6 @@
 <nav class="nav">
   <div class="nav-left">
-    <a class="nav-item is-active" href="/controle-agrotoxicos">
+    <a class="nav-item is-active" href="#">
       Home
     </a>
   </div>
@@ -23,7 +23,7 @@
     </a>
 
     <span class="nav-item">
-      <a class="button is-info" href="views/login.php">
+      <a class="button is-info" href="controllers/logout-controller.php">
         <span>Logout</span>
       </a>
     </span>

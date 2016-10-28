@@ -17,7 +17,7 @@
 				<span class="title"><h3>Home page</h3></span>
 
 				<?php
-					echo $_SESSION['nomeUsuario'];
+					echo 'Bem Vindo ' . $_SESSION['nomeUsuario'];
 				?>
 		  </div>
 		</div>
