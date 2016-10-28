@@ -1,3 +1,7 @@
+<?php
+  include_once('controllers/header-controller.php');
+  $controller = new HeaderController();
+?>
 <nav class="nav">
   <div class="nav-left">
     <a class="nav-item is-active" href="#">
