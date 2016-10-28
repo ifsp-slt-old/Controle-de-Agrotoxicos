@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include_once('controllers/header-controller.php');
   $controller = new HeaderController();
 ?>
@@ -14,17 +15,35 @@
     <span></span>
     <span></span>
   </span>
-
   <div class="nav-right nav-menu">
-    <a class="nav-item" href="views/new-entry.php">
-      Nova Entrada
-    </a>
-    <a class="nav-item" href="views/new-dropoff.php">
-      Nova Saida
-    </a>
-    <a class="nav-item" href="views/balance.php">
-      Relatorios
-    </a>
+
+    <?php
+      if($_SESSION['permissaoUsuario'] == 'E'){
+        echo '<a class="nav-item" href="views/new-entry.php">
+                Nova Entrada
+              </a>
+              <a class="nav-item" href="views/new-dropoff.php">
+                Nova Saida
+              </a>';
+      }
+    ?>
+    
+    <?php
+      if($_SESSION['permissaoUsuario'] == 'U' || $_SESSION['permissaoUsuario'] == 'O'){
+        echo '<a class="nav-item" href="views/balance.php">
+                Relatorios
+              </a>';
+      }
+    ?>
+
+    <?php
+      if($_SESSION['permissaoUsuario'] == 'U' || $_SESSION['permissaoUsuario'] == 'O'){
+        echo '<a class="nav-item" href="views/signup.php">
+                Cadastro
+              </a>';
+      }
+    ?>
+
 
     <span class="nav-item">
       <a class="button is-info" href="controllers/logout-controller.php">
