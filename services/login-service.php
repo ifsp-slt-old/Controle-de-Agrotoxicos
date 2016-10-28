@@ -22,12 +22,14 @@
       $this->dbh = null;
 
       if(!$result){ //Verifica se existe o usuario
-        echo "<span style='color:red'> Usuario/Senha invalidos</span>";
+        echo "<span style='color:red'> Usuario/Senha invalidos.</span>";
       } else {
         //Salva sessão do usuario
         $_SESSION['nomeUsuario'] = $result['nomeUsuario'];
         $_SESSION['idUsuario'] = $result['idUsuario'];
         $_SESSION['loginUsuario'] = $result['loginUsuario'];
+        $_SESSION['permissaoUsuario'] = $result['permissaoUsuario'];
+
         //Realiza o redirect via javascript
         echo '<script>window.location.href = "../index.php";</script>';
       }
