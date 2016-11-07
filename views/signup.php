@@ -54,7 +54,7 @@
 		if(!empty($_POST)){
 			if($_POST["senha"] == $_POST["senha_conf"]){
 				$controller = new SignupController();
-				$controller->do_signup($_POST["nome"], $_POST["login"], $_POST["senha"], $_POST["senha_conf"], $_POST["permissao"]);
+				$controller->do_signup($_POST["nome"], $_POST["login"], $_POST["senha"], $_POST["permissao"]);
 			} else {
 				echo "<span style='color:red'> Senha e Confirmação de senhas precisam ser iguais.</span>";
 			}
