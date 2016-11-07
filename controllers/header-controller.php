@@ -10,9 +10,9 @@
       $this->check_session();
     }
 
-    static function check_session(){
+    public function check_session(){
       if(!(isset($_SESSION['nomeUsuario']))){
-        echo '<script>window.location.href = "views/login.php";</script>';
+        $this->do_logout();
       }
     }
 
