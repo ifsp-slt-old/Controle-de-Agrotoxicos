@@ -11,10 +11,28 @@
 			<span class="title"><h3>Nova Entrada</h3></span>
       <form action="" method="POST" class="margin-top-10">
         <p class="control">
-          <input class="input" type="text" placeholder="Loading input">
+          <input class="input" type="text" name="receitaEntrada" placeholder="receitaEntrada">
         </p>
         <p class="control">
-          <textarea class="textarea" placeholder="Loading textarea"></textarea>
+          <input class="input" type="text" name="nfNumEntrada" placeholder="nfNumEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="dataNfEntrada" placeholder="dataNfEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="dataFabEntrada" placeholder="dataFabEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="dataValEntrada" placeholder="dataValEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="dataEntrada" placeholder="dataEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="qtdAtualEntrada" placeholder="qtdAtualEntrada">
+        </p>
+		<p class="control">
+          <input class="input" type="text" name="stattusUsoEntrada" placeholder="stattusUsoEntrada">
         </p>
       </form>
     </div>
