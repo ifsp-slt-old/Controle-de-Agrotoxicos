@@ -29,6 +29,11 @@
     		<p class="control">
           <input class="input" type="text" name="dataEntrada" placeholder="Data de Entrada">
         </p>  
+        <div class="columns margin-top-20">
+          <button class="button is-info column" type="submit">
+            Gerar nova Entrada
+          </button>
+        </div>
       </form>
     </div>
 
