@@ -13,8 +13,14 @@
 	
 
     public function do_signup($nome, $login, $senha, $permissao){
+       // Salva usuario no banco
        $sql = $this->dbh->query("INSERT INTO usuario(nomeUsuario, loginUsuario, senhaUsuario, permissaoUsuario) VALUES ('$nome', '$login', '$senha', '$permissao')");
        $this->dbh = null;
+       echo 'Cadastro realizado com sucesso';
+
+       //Realiza o redirect via javascript
+       echo '<script>window.location.href = "../index.php";</script>';
     }
+
   }
 ?>
