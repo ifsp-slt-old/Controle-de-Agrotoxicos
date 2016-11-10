@@ -17,8 +17,8 @@
 	
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada,
 	  $stattusUsoEntrada){
+
       //realiza query
-	  
       $sql = $this->dbh->query("INSERT INTO entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada
 	  stattusUsoEntrada) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '$qtdAtualEntrada',
 	  '$stattusUsoEntrada')");

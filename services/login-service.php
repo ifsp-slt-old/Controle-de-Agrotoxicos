@@ -28,7 +28,7 @@
         $_SESSION['nomeUsuario'] = $result['nomeUsuario'];
         $_SESSION['idUsuario'] = $result['idUsuario'];
         $_SESSION['loginUsuario'] = $result['loginUsuario'];
-        $_SESSION['permissaoUsuario'] = 'U';
+        $_SESSION['permissaoUsuario'] = $result['permissaoUsuario'];
 
         //Realiza o redirect via javascript
         echo '<script>window.location.href = "../index.php";</script>';

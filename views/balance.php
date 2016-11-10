@@ -1,9 +1,8 @@
 <html>
 	<head>
-    <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
+	    <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<script type="text/javascript" src="../js/balance.js"></script>
 	</head>
 	<body>
