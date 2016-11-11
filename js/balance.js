@@ -1,4 +1,4 @@
-const showEntry = () =>{
+const showEntry = () => { //Mostra relatorio de entrada
   let entry = document.getElementById('entry');
   if(entry.style.display === "none"){
     entry.style.display = '';
@@ -9,7 +9,7 @@ const showEntry = () =>{
 }
 
 
-let showDropoff = () =>{
+let showDropoff = () => { //Mostra relatorio de saida 
   let dropoff = document.getElementById('dropoff');
   if(dropoff.style.display === "none"){
     dropoff.style.display = '';

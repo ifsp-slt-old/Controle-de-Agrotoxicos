@@ -11,6 +11,19 @@
     <div class="container margin-top-20">
 			<span class="title"><h3>Nova Entrada</h3></span>
       <form action="" method="POST" class="margin-top-10">
+<!--         <div class="columns margin-top-20">
+          <div class="column">
+            <select class="select">
+              <option value="x">Decis</option>
+              <option value="x">Decis</option><option value="x">Decis</option>
+            </select>
+          </div>
+          <div class="column">
+            <button class="button is-info" style="padding:5px">
+              Novo agrotoxico
+            </button>
+          </div>
+        </div> -->
         <p class="control">
           <input class="input" type="text" name="receitaEntrada" placeholder="Receita">
         </p>
@@ -38,6 +51,19 @@
     </div>
 
 	</body>
+
+  <?php
+    include_once('../controllers/signup-controller.php');
+    if(!empty($_POST)){
+      if($_POST["senha"] == $_POST["senha_conf"]){
+        $controller = new SignupController();
+        $controller->do_signup($_POST["nome"], $_POST["login"], $_POST["senha"], $_POST["permissao"]);
+      } else {
+        echo "<span style='color:red'> Senha e Confirmação de senhas precisam ser iguais.</span>";
+      }
+
+    }
+  ?>
     
   <script type="text/javascript" src="../js/entry.js"></script>
 
