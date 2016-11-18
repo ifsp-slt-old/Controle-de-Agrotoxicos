@@ -53,8 +53,7 @@
     }
 
     /*
-    	select para exibição na pagina com os agrotoxicos ja cadastrados, trazendo seus respectivos fornecedores,
-	embalagens e fabricantes
+    	select para exibição na pagina com os agrotoxicos ja cadastrados, trazendo seus respectivos fornecedores, embalagens e fabricantes
     */
     public function new_entry_get_agtx(){
       //realiza query

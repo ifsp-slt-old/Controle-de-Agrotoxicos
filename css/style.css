@@ -14,7 +14,7 @@
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #3273dc;
     color: white;
 }
 
@@ -24,7 +24,7 @@
 /* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #3273dc;
     color: white;
     margin-top: 5px;
 }
@@ -46,13 +46,18 @@
     animation-duration: 0.4s
 }
 
+.close {
+    float:left;
+    margin-right: 10px;
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top: -300px; opacity: 0} 
-    to {top: 200; opacity: 1}
+    to {top: 0; opacity: 1}
 }
 
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
-    to {top: 200; opacity: 1}
+    to {top: 0; opacity: 1}
 }

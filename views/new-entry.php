@@ -8,48 +8,35 @@
 	</header>
 	<body>
 		<?php include_once("partials/_header.php"); ?>
-    <?php include_once("../controllers/new-entry-controller.php"); ?>
+    <?php 
+          include_once("../controllers/new-entry-controller.php");
+          include_once("../controllers/new-agtx-controller.php");
+          $entryController = new NewEntryController();
+          $agtxController = new NewAgtxController();
+    ?>
 
     <div class="container margin-top-20">
 			<span class="title"><h3>Nova Entrada</h3></span>
+      
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+        <?php include_once('./new-agtx.php'); ?>
+      </div>
+
       <form action="" method="POST" class="margin-top-10">
           <div class="columns">
             <div class="column">
-              <select class="select is-three-quarters" style="width:100%">
+              <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
                 <?php
-                   $controller = new NewEntryController();
-                   $agtxs = $controller->do_new_entry_get_agtx();  
+                   $agtxs = $entryController->do_new_entry_get_agtx();  
                    foreach ($agtxs as $agtx){
-                      echo "<option value='$agtx'>" . $agtx['nomeComercialAgtx'] . "</option>";
+                      echo "<option>" . $agtx['nomeComercialAgtx'] . "</option>";
                    }
                 ?>
               </select>
             </div>
             <div class="column">
               <input type="button" class="button" id="myBtn" value="Novo Agrotoxico">
-            </div>
-
-          </div>
-
-          <!-- Modal -->
-          <div id="myModal" class="modal">
-
-            <div class="modal-content">
-              <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Novo Agrotoxico</h2>
-              </div>
-              <div class="modal-body">
-                <p class="control">
-                  <input class="input" type="text" name="receitaEntrada" placeholder="Receita">
-                </p>
-                <p class="control">
-                  <input class="input" type="text" name="nfNumEntrada" placeholder="Numero Nota Fiscal">
-                </p>
-              </div>
-              <div class="modal-footer">
-                <h3>Modal Footer</h3>
-              </div>
             </div>
 
           </div>
@@ -83,15 +70,14 @@
 	</body>
 
   <?php
-    include_once('../controllers/signup-controller.php');
     if(!empty($_POST)){
-      if($_POST["senha"] == $_POST["senha_conf"]){
-        $controller = new SignupController();
-        $controller->do_signup($_POST["nome"], $_POST["login"], $_POST["senha"], $_POST["permissao"]);
+      if(empty($_POST['x'])){
+        echo 1;
+        $entryController->new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], $_POST["AgtxUnidade_idAgtxUnidade"]);
       } else {
-        echo "<span style='color:red'> Senha e Confirmação de senhas precisam ser iguais.</span>";
+        //salvar banco
+        echo '<script>location.reload();</script>';
       }
-
     }
   ?>
   <script>
