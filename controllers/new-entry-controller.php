@@ -51,7 +51,7 @@
 		  //instancia serviço		
 	   	  $service = new EntryService();
 	   	  //Realiza nova entrada
-	          $service->new_entry_get_agtx();
+	      return $service->new_entry_get_agtx();
 		  
 		  //CASO SEJA NECESSARIO TRATAR OS DADOS, PODE-SE FAZER NESTE TRECHO
 		  
@@ -97,36 +97,31 @@
 		  
 	  }
 	  
-	    public function do_new_entry_get_embalagem($id){
+	  public function do_new_entry_get_embalagem($id){
 		 
-		  //instancia serviço		
-	   	  $service = new EntryService();
-	   	  //Realiza nova entrada
-		 $agtx_embalagem = array();
-		 $emb = array();
+		//instancia serviço		
+	 	$service = new EntryService();
+	   	//Realiza nova entrada
+	    $agtx_embalagem = array();
+	    $emb = array();
 		// $agtx_embalagem_tipo = '';
 		// $agtx_embalagem_unidade = '';
 		// $agtx_embalagem_qtde = '';
-	         $agtx_embalagem =  $service->new_entry_get_agtx_emb($id);
+	    $agtx_embalagem =  $service->new_entry_get_agtx_emb($id);
 		  
-		  if($agtx_embalagem){
-			  for($i=0; $i<sizeof($agtx_embalagem); $i++){
-				  $emb[$i]['tipoEmbalagem'] =  $agtx_embalagem['tipoEmbalagem'];
-				  $emb[$i]['unMedEmbalagem'] =  $agtx_embalagem['unMedEmbalagem'];
-				  $emb[$i]['qtdMedEmbalagem'] =  $agtx_embalagem['qtdMedEmbalagem'];
-			  }
-			 
-			  return $emb;
-		  }else{
-			  return 'SEMDADOS';
-		  }
-		  
+	    if($agtx_embalagem){
+		    for($i=0; $i<sizeof($agtx_embalagem); $i++){
+		      $emb[$i]['tipoEmbalagem'] =  $agtx_embalagem['tipoEmbalagem'];
+			  $emb[$i]['unMedEmbalagem'] =  $agtx_embalagem['unMedEmbalagem'];
+			  $emb[$i]['qtdMedEmbalagem'] =  $agtx_embalagem['qtdMedEmbalagem'];
+		    }
 		 
+		  return $emb;
+	    }else{
+		  return 'SEMDADOS';
+	    }	  
 		  
 	  }
-	  
-	  
-	  
 	  
   }
 ?>

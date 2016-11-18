@@ -56,11 +56,13 @@
     	select para exibição na pagina com os agrotoxicos ja cadastrados, trazendo seus respectivos fornecedores,
 	embalagens e fabricantes
     */
-    public function new_entry_get_info_agtx(){
+    public function new_entry_get_agtx(){
       //realiza query
-      $sql = $this->dbh->query("SELECT agtxunidade.* FROM agtxunidade");
-      $result = $sql->fetch();
+      $sql = $this->dbh->query("SELECT * FROM AgtxUnidade");
+      $result = $sql->fetchAll();
       $this->dbh = null;
+
+      return $result;
      
     }
 		
