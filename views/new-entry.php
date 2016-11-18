@@ -71,12 +71,13 @@
 
   <?php
     if(!empty($_POST)){
-      if(empty($_POST['x'])){
+      if(empty($_POST['nomeComercialAgtx'])){
         echo 1;
         $entryController->new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], $_POST["AgtxUnidade_idAgtxUnidade"]);
       } else {
+        echo 2;
         //salvar banco
-        echo '<script>location.reload();</script>';
+        // echo '<script>location.reload();</script>';
       }
     }
   ?>
