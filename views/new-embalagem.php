@@ -9,10 +9,8 @@
 	<body>
 		<?php include_once("partials/_header.php"); ?>
     <?php 
-          include_once("../controllers/new-entry-controller.php");
-          include_once("../controllers/new-agtx-controller.php");
-          $entryController = new NewEntryController();
-          $agtxController = new NewAgtxController();
+          include_once("../controllers/new-embalagem-controller.php");
+          $controller = new NewEmbalagemController();
     ?>
 
     <div class="container margin-top-20">
@@ -42,7 +40,7 @@
 
   <?php
     if(!empty($_POST)){
-        $entryController->new_entry($_POST["tipoEmbalagem"], $_POST["undMedidaEmbalagem"], $_POST["qtdMedidaEmbalagem"]);
+        $controller->new_entry_embalagem($_POST["tipoEmbalagem"], $_POST["undMedidaEmbalagem"], $_POST["qtdMedidaEmbalagem"]);
     }
   ?>
 
