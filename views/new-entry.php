@@ -30,7 +30,7 @@
                 <?php
                    $agtxs = $entryController->do_new_entry_get_agtx();  
                    foreach ($agtxs as $agtx){
-                      echo "<option>" . $agtx['nomeComercialAgtx'] . "</option>";
+                      echo "<option value='" . $agtx['idAgtxUnidade'] . "'>" . $agtx['nomeComercialAgtx'] . "</option>";
                    }
                 ?>
               </select>
@@ -72,12 +72,9 @@
   <?php
     if(!empty($_POST)){
       if(empty($_POST['nomeComercialAgtx'])){
-        echo 1;
         $entryController->new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], $_POST["AgtxUnidade_idAgtxUnidade"]);
       } else {
-        echo 2;
-        //salvar banco
-        // echo '<script>location.reload();</script>';
+        $agtxController->new_agtx($_POST['nomeComercialAgtx'], $_POST['classeAplicacaoAgtx'], $_POST['principioAtivoAgtx'], $_POST['concentracaoAgtx'], $_POST['formulacaoAgtx'], $_POST['statusAgtx']);
       }
     }
   ?>

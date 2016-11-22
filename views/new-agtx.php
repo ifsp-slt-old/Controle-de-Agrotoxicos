@@ -28,5 +28,9 @@
     <button class="button is-info margin-top-10" style="width:100%;" type="submit">
       Criar novo agrotoxico
     </button>
+
+                            <div class="column">
+              <input type="button" class="button" id="btnEmbalagem" value="Novo Agrotoxico">
+            </div>
   </form>
 </div>

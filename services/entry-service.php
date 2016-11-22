@@ -15,8 +15,7 @@
     }
 	
 	
-    public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada,
-	  $stattusUsoEntrada){
+    public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
 
       //realiza query
       $sql = $this->dbh->query("INSERT INTO entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada
@@ -100,6 +99,17 @@
       $result = $sql->fetch();
       $this->dbh = null;
      
+    }
+
+    public function new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx,                       $formulacaoAgtx, $statusAgtx){
+      echo $nomeComercialAgtx;
+
+      // $sql = $this->dbh->query("SELECT fabricante.* FROM fabricante WHERE idFabricante = '$id'");
+      // $result = $sql->fetch();
+      // $this->dbh = null;
+      // echo '<script>location.reload();</script>';
+
+
     }
 		
   
