@@ -29,6 +29,15 @@
 		              </a>
 		              <a class="nav-item" href="views/new-dropoff.php">
 		                Nova Saida
+		              </a>
+  		              <a class="nav-item" href="views/new-embalagem.php">
+		                Nova Embalagem
+		              </a>
+		              <a class="nav-item" href="views/new-fornecedor.php">	
+		                Novo Fornecedor
+		              </a>
+  		              <a class="nav-item" href="views/new-fabricante.php">
+		                Novo Fabricante
 		              </a>';
 		      }
 		    ?>

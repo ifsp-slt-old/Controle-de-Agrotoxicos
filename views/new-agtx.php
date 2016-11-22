@@ -37,7 +37,7 @@
           </select>
         </div>
         <div class="column">
-          <input type="button" class="button" value="Novo Fornecedor">
+          <a href="./new-fornecedor.php" onClick="return popup(this, 'notes')" class="button">Novo Fornecedor</a>
         </div>
       </div>
       <div class="columns">
@@ -53,7 +53,7 @@
           </select>
         </div>
         <div class="column">
-          <a href="./new-dropoff.php" onClick="return popup(this, 'notes')" class="button">Nova Embalagem</a>
+          <a href="./new-embalagem.php" onClick="return popup(this, 'notes')" class="button">Nova Embalagem</a>
         </div>
       </div>
       <div class="columns">
@@ -69,7 +69,7 @@
           </select>
         </div>
         <div class="column">
-          <a href="./new-dropoff.php" onClick="return popup(this, 'notes')" class="button">Novo Fabricante</a>
+          <a href="./new-fabricante.php" onClick="return popup(this, 'notes')" class="button">Novo Fabricante</a>
         </div>
       </div>
     </div>
