@@ -9,10 +9,8 @@
 	<body>
 		<?php include_once("partials/_header.php"); ?>
     <?php 
-          include_once("../controllers/new-entry-controller.php");
-          include_once("../controllers/new-agtx-controller.php");
-          $entryController = new NewEntryController();
-          $agtxController = new NewAgtxController();
+          include_once("../controllers/new-fornecedor-controller.php");
+          $controller = new NewFornecedorController();
     ?>
 
     <div class="container margin-top-20">
@@ -37,7 +35,7 @@
 
   <?php
     if(!empty($_POST)){
-        $entryController->new_entry($_POST["nomeFornecedor"]);
+        $controller->new_entry_fornecedor($_POST["nomeFornecedor"]);
     }
   ?>
 
