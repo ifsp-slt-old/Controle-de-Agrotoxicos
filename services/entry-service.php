@@ -103,10 +103,15 @@
 
     public function new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx,                       $formulacaoAgtx, $statusAgtx){
       echo $nomeComercialAgtx;
+	    
+	    /*
+		Os ids podem ser obtidos com as queries de select em cada tabela, atribui cada id em uma variavel e passa na query abaixo.
+	    */
 
-      // $sql = $this->dbh->query("SELECT fabricante.* FROM fabricante WHERE idFabricante = '$id'");
+       $sql = $this->dbh->query("INSERT INTO 'agtxunidade'('nomeComercialAgtx', 'classeAplicacaoAgtx', 'principioAtivoAgtx', 'concentracaoAgtx', 'formulacaoAgtx', 'statusAgtx', 'Fabricante_idFabricante', 'Fornecedor_idFornecedor', 'Embalagem_idEmbalagem') 
+VALUES ('$nomeComercialAgtx', '$classeAplicacaoAgtx', '$principioAtivoAgtx', '$concentracaoAgtx', '$formulacaoAgtx', '$statusAgtx')");
       // $result = $sql->fetch();
-      // $this->dbh = null;
+       $this->dbh = null;
       // echo '<script>location.reload();</script>';
 
 
