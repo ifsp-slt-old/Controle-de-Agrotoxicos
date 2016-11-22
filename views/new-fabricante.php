@@ -9,8 +9,8 @@
   <body>
     <?php include_once("partials/_header.php"); ?>
     <?php 
-          include_once("../controllers/new-entry-controller.php");
-          $entryController = new NewEntryController();
+          include_once("../controllers/new-fabricante-controller.php");
+          $controller = new NewFabricanteController();
     ?>
 
     <div class="container margin-top-20">
@@ -35,7 +35,7 @@
 
   <?php
     if(!empty($_POST)){
-        $entryController->new_entry($_POST["nomeFabricante"]);
+        $controller->new_entry_fabricante($_POST["nomeFabricante"]);
     }
   ?>
 

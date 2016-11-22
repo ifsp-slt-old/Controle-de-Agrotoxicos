@@ -3,10 +3,10 @@
 
   class NewFabricanteController{
 
-  	public function new_entry_embalagem($tipoEmbalagem, $undMedidaEmbalagem, $qtdMedidaEmbalagem){
+  	public function new_entry_fabricante($nomeFabricante){
 
   		$service = new EntryService();
-  		$service->new_entry_embalagem($tipoEmbalagem, $undMedidaEmbalagem, $qtdMedidaEmbalagem);
+  		$service->new_entry_fabricante($nomeFabricante);
 
   	}
   }
