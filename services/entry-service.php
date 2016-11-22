@@ -63,6 +63,36 @@
       return $result;
      
     }
+
+    public function do_new_entry_get_fabricante(){
+      //realiza query
+      $sql = $this->dbh->query("SELECT * FROM Fabricante");
+      $result = $sql->fetchAll();
+      $this->dbh = null;
+
+      return $result;
+     
+    }
+
+    public function do_new_entry_get_fornecedor(){
+      //realiza query
+      $sql = $this->dbh->query("SELECT * FROM Fornecedor");
+      $result = $sql->fetchAll();
+      $this->dbh = null;
+
+      return $result;
+     
+    }
+
+    public function do_new_entry_get_embalagem(){
+      //realiza query
+      $sql = $this->dbh->query("SELECT * FROM Embalagem");
+      $result = $sql->fetchAll();
+      $this->dbh = null;
+
+      return $result;
+     
+    }
 		
 	/*
 		Abaixo, queries para trazer cada um dos aliados do agrotoxico (embarcador, fornecedor e embalagem)

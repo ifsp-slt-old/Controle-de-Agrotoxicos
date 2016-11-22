@@ -47,80 +47,39 @@
 	  */
 	  
 	  public function do_new_entry_get_agtx(){
-		 
+		
 		  //instancia serviço		
 	   	  $service = new EntryService();
 	   	  //Realiza nova entrada
 	      return $service->new_entry_get_agtx();
-		  
-		  //CASO SEJA NECESSARIO TRATAR OS DADOS, PODE-SE FAZER NESTE TRECHO
-		  
+
 	  }
 	  
-	  public function do_new_entry_get_fornecedor($id){
-		 
+  	  public function do_new_entry_get_fornecedor(){
+		
 		  //instancia serviço		
 	   	  $service = new EntryService();
 	   	  //Realiza nova entrada
-		 $agtx_fornecedor = array();
-		 $agtx_fornecedor_nome = '';
-	         $agtx_fornecedor =  $service->new_entry_get_agtx_for($id);
-		  
-		  if($agtx_fornecedor){
-			  $agtx_fornecedor_nome = $agtx_fornecedor['nomeFornecedor'];
-			  return $agtx_fornecedor_nome;
-		  }else{
-			  return 'SEMDADOS';
-		  }
-		  
-		 
-		  
+	      return $service->do_new_entry_get_fornecedor();
+	      		
 	  }
-	  
-	    public function do_new_entry_get_fabricante($id){
-		 
+
+  	  public function do_new_entry_get_embalagem(){
+		
 		  //instancia serviço		
 	   	  $service = new EntryService();
 	   	  //Realiza nova entrada
-		 $agtx_fabricante = array();
-		 $agtx_fabricante_nome = '';
-	         $agtx_fabricante =  $service->new_entry_get_agtx_fab($id);
-		  
-		  if($agtx_fabricante){
-			  $agtx_fabricante_nome = $agtx_fabricante['nomeFabricante'];
-			  return $agtx_fabricante_nome;
-		  }else{
-			  return 'SEMDADOS';
-		  }
-		  
-		 
-		  
+	      return $service->do_new_entry_get_embalagem();
+	      		
 	  }
-	  
-	  public function do_new_entry_get_embalagem($id){
-		 
-		//instancia serviço		
-	 	$service = new EntryService();
-	   	//Realiza nova entrada
-	    $agtx_embalagem = array();
-	    $emb = array();
-		// $agtx_embalagem_tipo = '';
-		// $agtx_embalagem_unidade = '';
-		// $agtx_embalagem_qtde = '';
-	    $agtx_embalagem =  $service->new_entry_get_agtx_emb($id);
-		  
-	    if($agtx_embalagem){
-		    for($i=0; $i<sizeof($agtx_embalagem); $i++){
-		      $emb[$i]['tipoEmbalagem'] =  $agtx_embalagem['tipoEmbalagem'];
-			  $emb[$i]['unMedEmbalagem'] =  $agtx_embalagem['unMedEmbalagem'];
-			  $emb[$i]['qtdMedEmbalagem'] =  $agtx_embalagem['qtdMedEmbalagem'];
-		    }
-		 
-		  return $emb;
-	    }else{
-		  return 'SEMDADOS';
-	    }	  
-		  
+
+	  public function do_new_entry_get_fabricante(){
+		
+		  //instancia serviço		
+	   	  $service = new EntryService();
+	   	  //Realiza nova entrada
+	      return $service->do_new_entry_get_fabricante();
+	      		
 	  }
 	  
   }

@@ -24,22 +24,22 @@
       </div>
 
       <form action="" method="POST" class="margin-top-10">
-          <div class="columns">
-            <div class="column">
-              <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
-                <?php
-                   $agtxs = $entryController->do_new_entry_get_agtx();  
-                   foreach ($agtxs as $agtx){
-                      echo "<option value='" . $agtx['idAgtxUnidade'] . "'>" . $agtx['nomeComercialAgtx'] . "</option>";
-                   }
-                ?>
-              </select>
-            </div>
-            <div class="column">
-              <input type="button" class="button" id="myBtn" value="Novo Agrotoxico">
-            </div>
-
+        <div class="columns">
+          <div class="column">
+            <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+              <option selected="true" disabled="disabled"> Selecione um agrotoxico </option>
+              <?php
+                 $agtxs = $entryController->do_new_entry_get_agtx();  
+                 foreach ($agtxs as $agtx){
+                    echo "<option value='" . $agtx['idAgtxUnidade'] . "'>" . $agtx['nomeComercialAgtx'] . "</option>";
+                 }
+              ?>
+            </select>
           </div>
+          <div class="column">
+            <input type="button" class="button" id="myBtn" value="Novo Agrotoxico">
+          </div>
+        </div>
 
         <p class="control">
           <input class="input" type="text" name="receitaEntrada" placeholder="Receita">
@@ -66,6 +66,7 @@
         </div>
       </form>
     </div>
+    
 
 	</body>
 
@@ -79,30 +80,40 @@
     }
   ?>
   <script>
-var modal = document.getElementById('myModal');
+    let modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+    // Get the button that opens the modal
+    let btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+    // When the user clicks on the button, open the modal 
+    btn.onclick = () => {
+        modal.style.display = "block";
+    }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = () => {
         modal.style.display = "none";
     }
-}
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    let popup = (mylink, windowname) => {
+      let href;
+      if (! window.focus)return true;
+      if (typeof(mylink) == 'string') href=mylink;
+      else href=mylink.href; 
+      window.open(href, windowname, 'width=800,height=600,scrollbars=yes'); 
+      return false; 
+    }
+
   </script>
     
   <script type="text/javascript" src="../js/entry.js"></script>

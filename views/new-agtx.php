@@ -24,13 +24,57 @@
       <p class="control">
         <input class="input" type="text" name="statusAgtx" placeholder="Status">
       </p>
+      <div class="columns">
+        <div class="column">
+          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+            <option selected="true" disabled="disabled"> Selecione um fornecedor </option>
+            <?php
+               $fornecedores = $entryController->do_new_entry_get_fornecedor();  
+               foreach ($fornecedores as $f){
+                  echo "<option value='" . $agtx['idFornecedor'] . "'>" . $f['nomeFornecedor'] . "</option>";
+               }
+            ?>
+          </select>
+        </div>
+        <div class="column">
+          <input type="button" class="button" value="Novo Fornecedor">
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+            <option selected="true" disabled="disabled">Selecione uma embalagem </option>
+            <?php
+               $embalagens = $entryController->do_new_entry_get_embalagem();  
+               foreach ($embalagens as $e){
+                  echo "<option value='" . $e['idEmbalagem'] . "'>" . $e['tipoEmbalagem'] . " " . $e['qtdMedidaEmbalagem'] . $e['undMedidaEmbalagem'] . "</option>";
+               }
+            ?>
+          </select>
+        </div>
+        <div class="column">
+          <a href="./new-dropoff.php" onClick="return popup(this, 'notes')" class="button">Nova Embalagem</a>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+            <option selected="true" disabled="disabled">Selecione um fabricante</option>
+            <?php
+               $fabricantes = $entryController->do_new_entry_get_fabricante();  
+               foreach ($fabricantes as $f){
+                  echo "<option value='" . $f['idFabricante'] . "'>" . $f['nomeFabricante'] . "</option>";
+               }
+            ?>
+          </select>
+        </div>
+        <div class="column">
+          <a href="./new-dropoff.php" onClick="return popup(this, 'notes')" class="button">Novo Fabricante</a>
+        </div>
+      </div>
     </div>
     <button class="button is-info margin-top-10" style="width:100%;" type="submit">
       Criar novo agrotoxico
     </button>
-
-                            <div class="column">
-              <input type="button" class="button" id="btnEmbalagem" value="Novo Agrotoxico">
-            </div>
   </form>
 </div>
