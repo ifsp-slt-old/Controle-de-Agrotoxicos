@@ -31,7 +31,7 @@
             <?php
                $fornecedores = $entryController->do_new_entry_get_fornecedor();  
                foreach ($fornecedores as $f){
-                  echo "<option value='" . $agtx['idFornecedor'] . "'>" . $f['nomeFornecedor'] . "</option>";
+                  echo "<option value='" . $f['idFornecedor'] . "'>" . $f['nomeFornecedor'] . "</option>";
                }
             ?>
           </select>

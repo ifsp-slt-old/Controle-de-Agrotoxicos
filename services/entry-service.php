@@ -17,11 +17,15 @@
 	
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
 
+
       //realiza query
-      $sql = $this->dbh->query("INSERT INTO entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada
-	  stattusUsoEntrada) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '$qtdAtualEntrada',
-	  '$stattusUsoEntrada')");
-     // $result = $sql->fetch();
+      $sql = $this->dbh->query("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
+        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1',
+	  'A', '$AgtxUnidade_idAgtxUnidade')");
+      //print_r($sql);
+     // echo $sql;
+
+     //print_r($result);
       $this->dbh = null;
      
     }

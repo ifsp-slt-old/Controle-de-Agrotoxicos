@@ -31,7 +31,8 @@
               <?php
                  $agtxs = $entryController->do_new_entry_get_agtx();  
                  foreach ($agtxs as $agtx){
-                    echo "<option value='" . $agtx['idAgtxUnidade'] . "'>" . $agtx['nomeComercialAgtx'] . "</option>";
+                    $id = $agtx['idAgtxUnidade'];
+                    echo "<option value='$id'>" . $agtx['nomeComercialAgtx'] . "</option>";
                  }
               ?>
             </select>
@@ -40,7 +41,6 @@
             <input type="button" class="button" id="myBtn" value="Novo Agrotoxico">
           </div>
         </div>
-
         <p class="control">
           <input class="input" type="text" name="receitaEntrada" placeholder="Receita">
         </p>
@@ -73,7 +73,7 @@
   <?php
     if(!empty($_POST)){
       if(empty($_POST['nomeComercialAgtx'])){
-        $entryController->new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], $_POST["AgtxUnidade_idAgtxUnidade"]);
+        $entryController->do_new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], 1,'EM ESTOQUE', $_POST["AgtxUnidade_idAgtxUnidade"]);
       } else {
         $agtxController->new_agtx($_POST['nomeComercialAgtx'], $_POST['classeAplicacaoAgtx'], $_POST['principioAtivoAgtx'], $_POST['concentracaoAgtx'], $_POST['formulacaoAgtx'], $_POST['statusAgtx']);
       }
