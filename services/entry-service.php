@@ -16,19 +16,9 @@
 	
 	
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
-
-      echo "INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
-        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1',
-    'A', '$AgtxUnidade_idAgtxUnidade')";
       //realiza query
       $sql = $this->dbh->exec("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade, AgtxUnidade_Fabricante_idFabricante, AgtxUnidade_Fornecedor_idFornecedor, AgtxUnidade_Embalagem_idEmbalagem) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
-        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1',
-	  'A', '$AgtxUnidade_idAgtxUnidade')");
-      $result = $sql->fetch();
-       echo $result;
-      print_r($sql);
-      echo $sql;
-
+        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1', 'A', '$AgtxUnidade_idAgtxUnidade')");
      
 
      //print_r($result);
