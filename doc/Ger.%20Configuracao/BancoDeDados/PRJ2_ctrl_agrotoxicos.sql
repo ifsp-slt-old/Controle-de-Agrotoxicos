@@ -74,10 +74,7 @@ CREATE TABLE IF NOT EXISTS `entrada` (
   `dataEntrada` datetime NOT NULL,
   `qtdAtualEntrada` float unsigned NOT NULL,
   `stattusUsoEntrada` char(1) NOT NULL,
-  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL,
-  `AgtxUnidade_Fabricante_idFabricante` int(11) NOT NULL,
-  `AgtxUnidade_Fornecedor_idFornecedor` int(11) NOT NULL,
-  `AgtxUnidade_Embalagem_idEmbalagem` int(11) NOT NULL,
+  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL
   PRIMARY KEY (`idEntrada`,`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`),
   KEY `fk_Entrada_AgtxUnidade_idx` (`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -214,7 +211,7 @@ ALTER TABLE `retorno`
 -- Limitadores para a tabela `saida`
 --
 ALTER TABLE `saida`
-  ADD CONSTRAINT `fk_Saida_Entrada1` FOREIGN KEY (`Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`, `Entrada_AgtxUnidade_Fabricante_idFabricante`, `Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Entrada_AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `entrada` (`idEntrada`, `AgtxUnidade_idAgtxUnidade`, `AgtxUnidade_Fabricante_idFabricante`, `AgtxUnidade_Fornecedor_idFornecedor`, `AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Saida_Entrada1` FOREIGN KEY (`Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`) REFERENCES `entrada` (`idEntrada`, `AgtxUnidade_idAgtxUnidade`, `AgtxUnidade_Fabricante_idFabricante`, `AgtxUnidade_Fornecedor_idFornecedor`, `AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Saida_Requisicao1` FOREIGN KEY (`Requisicao_idRequisicao`) REFERENCES `requisicao` (`idRequisicao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

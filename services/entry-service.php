@@ -17,16 +17,13 @@
 	
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
 
-      // $dataNfEntradaSend = date_format($dataNfEntrada,"Y-m-d");
-      // $dataValEntradaSend = date_format($dataValEntrada,"Y-m-d");
-      // $dataFabEntradaSend = date_format($dataFabEntrada,"Y-m-d");
-      // $dataEntrada = date_format($dataEntrada,"Y-m-d");
-      // echo $dataValEntrada;
-
-      //realiza query
-      $sql = $this->dbh->exec("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
+      echo "INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
         '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1',
-	  'A', '$AgtxUnidade_idAgtxUnidade')");
+    'A', '$AgtxUnidade_idAgtxUnidade')";
+      //realiza query
+      $sql = $this->dbh->exec("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade, AgtxUnidade_Fabricante_idFabricante, AgtxUnidade_Fornecedor_idFornecedor, AgtxUnidade_Embalagem_idEmbalagem) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
+        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1',
+	  'A', '$AgtxUnidade_idAgtxUnidade', '1', '1', '1')");
       $result = $sql->fetch();
        echo $result;
       print_r($sql);
@@ -134,9 +131,6 @@
 		Os ids podem ser obtidos com as queries de select em cada tabela, atribui cada id em uma variavel e passa na query abaixo.
 
 	    */
-      echo "INSERT INTO AgtxUnidade('nomeComercialAgtx', 'classeAplicacaoAgtx', 'principioAtivoAgtx', 'concentracaoAgtx', 'formulacaoAgtx', 'statusAgtx', 'Fabricante_idFabricante', 'Fornecedor_idFornecedor', 'Embalagem_idEmbalagem') 
-VALUES ('$nomeComercialAgtx', '$classeAplicacaoAgtx', '$principioAtivoAgtx', '$concentracaoAgtx', '$formulacaoAgtx', '$statusAgtx', '$idFabricante', '$idFornecedor', '$idEmbalagem')";
-
 
 
        $sql = $this->dbh->exec("INSERT INTO AgtxUnidade(nomeComercialAgtx, classeAplicacaoAgtx, principioAtivoAgtx, concentracaoAgtx, formulacaoAgtx, statusAgtx, Fabricante_idFabricante,Fornecedor_idFornecedor, Embalagem_idEmbalagem) 

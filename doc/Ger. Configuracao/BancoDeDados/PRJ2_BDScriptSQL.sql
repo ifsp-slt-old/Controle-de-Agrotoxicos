@@ -75,10 +75,7 @@ CREATE TABLE IF NOT EXISTS `entrada` (
   `dataEntrada` datetime NOT NULL,
   `qtdAtualEntrada` float unsigned NOT NULL,
   `stattusUsoEntrada` char(1) NOT NULL,
-  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL,
-  `AgtxUnidade_Fabricante_idFabricante` int(11) NOT NULL,
-  `AgtxUnidade_Fornecedor_idFornecedor` int(11) NOT NULL,
-  `AgtxUnidade_Embalagem_idEmbalagem` int(11) NOT NULL,
+  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL
   PRIMARY KEY (`idEntrada`,`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`),
   KEY `fk_Entrada_AgtxUnidade_idx` (`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -203,7 +200,7 @@ ALTER TABLE `agtxunidade`
 -- Limitadores para a tabela `entrada`
 --
 ALTER TABLE `entrada`
-  ADD CONSTRAINT `fk_Entrada_AgtxUnidade1` FOREIGN KEY (`AgtxUnidade_idAgtxUnidade`, `AgtxUnidade_Fabricante_idFabricante`, `AgtxUnidade_Fornecedor_idFornecedor`, `AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `agtxunidade` (`idAgtxUnidade`, `Fabricante_idFabricante`, `Fornecedor_idFornecedor`, `Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Entrada_AgtxUnidade1` FOREIGN KEY (`AgtxUnidade_idAgtxUnidade`) REFERENCES `agtxunidade` (`idAgtxUnidade`, `Fabricante_idFabricante`, `Fornecedor_idFornecedor`, `Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `retorno`
