@@ -48,16 +48,16 @@
           <input class="input" type="text" name="nfNumEntrada" placeholder="Numero Nota Fiscal">
         </p>
     		<p class="control">
-          <input class="input" type="text" name="dataNfEntrada" placeholder="Data de Entrada NF">
+          <input class="input" type="date" name="dataNfEntrada" placeholder="Data de Entrada NF">
         </p>
     		<p class="control">
-          <input class="input" type="text" name="dataFabEntrada" placeholder="Data de Fabricação">
+          <input class="input" type="date" name="dataFabEntrada" placeholder="Data de Fabricação">
         </p>
     		<p class="control">
-          <input class="input" type="text" name="dataValEntrada" placeholder="Data de Validade">
+          <input class="input" type="date" name="dataValEntrada" placeholder="Data de Validade">
         </p>
     		<p class="control">
-          <input class="input" type="text" name="dataEntrada" placeholder="Data de Entrada">
+          <input class="input" type="date" name="dataEntrada" placeholder="Data de Entrada">
         </p>  
         <div class="columns margin-top-20">
           <button class="button is-info column" type="submit">
@@ -75,7 +75,7 @@
       if(empty($_POST['nomeComercialAgtx'])){
         $entryController->do_new_entry($_POST["receitaEntrada"], $_POST["nfNumEntrada"], $_POST["dataNfEntrada"], $_POST["dataFabEntrada"], $_POST["dataValEntrada"], $_POST["dataEntrada"], 1,'EM ESTOQUE', $_POST["AgtxUnidade_idAgtxUnidade"]);
       } else {
-        $agtxController->new_agtx($_POST['nomeComercialAgtx'], $_POST['classeAplicacaoAgtx'], $_POST['principioAtivoAgtx'], $_POST['concentracaoAgtx'], $_POST['formulacaoAgtx'], $_POST['statusAgtx']);
+        $agtxController->new_agtx($_POST['nomeComercialAgtx'], $_POST['classeAplicacaoAgtx'], $_POST['principioAtivoAgtx'], $_POST['concentracaoAgtx'], $_POST['formulacaoAgtx'], $_POST['statusAgtx'], $_POST['Fabricante_idFabricante'], $_POST['Fornecedor_idFornecedor'], $_POST['Embalagem_idEmbalagem']);
       }
     }
   ?>

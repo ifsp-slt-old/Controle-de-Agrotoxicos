@@ -26,7 +26,7 @@
       </p>
       <div class="columns">
         <div class="column">
-          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+          <select class="select is-three-quarters" name="Fornecedor_idFornecedor" style="width:100%">
             <option selected="true" disabled="disabled"> Selecione um fornecedor </option>
             <?php
                $fornecedores = $entryController->do_new_entry_get_fornecedor();  
@@ -42,12 +42,13 @@
       </div>
       <div class="columns">
         <div class="column">
-          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+          <select class="select is-three-quarters" name="Embalagem_idEmbalagem" style="width:100%">
             <option selected="true" disabled="disabled">Selecione uma embalagem </option>
             <?php
                $embalagens = $entryController->do_new_entry_get_embalagem();  
                foreach ($embalagens as $e){
-                  echo "<option value='" . $e['idEmbalagem'] . "'>" . $e['tipoEmbalagem'] . " " . $e['qtdMedidaEmbalagem'] . $e['undMedidaEmbalagem'] . "</option>";
+                  $id = $e['idEmbalagem'];
+                  echo "<option value='$id'>" . $e['tipoEmbalagem'] . " " . $e['qtdMedidaEmbalagem'] . $e['undMedidaEmbalagem'] . "</option>";
                }
             ?>
           </select>
@@ -58,7 +59,7 @@
       </div>
       <div class="columns">
         <div class="column">
-          <select class="select is-three-quarters" name="AgtxUnidade_idAgtxUnidade" style="width:100%">
+          <select class="select is-three-quarters" name="Fabricante_idFabricante" style="width:100%">
             <option selected="true" disabled="disabled">Selecione um fabricante</option>
             <?php
                $fabricantes = $entryController->do_new_entry_get_fabricante();  

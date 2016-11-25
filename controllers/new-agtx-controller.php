@@ -3,10 +3,10 @@
 
   class NewAgtxController{
 
-  	public function new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx, 						$formulacaoAgtx, $statusAgtx){
+  	public function new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx, 						$formulacaoAgtx, $statusAgtx, $idFabricante, $idFornecedor, $idEmbalagem){
 
   		$service = new EntryService();
-  		$service->new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx, 				$formulacaoAgtx, $statusAgtx);
+  		$service->new_agtx($nomeComercialAgtx, $classeAplicacaoAgtx, $principioAtivoAgtx, $concentracaoAgtx, 				$formulacaoAgtx, $statusAgtx, $idFabricante, $idFornecedor, $idEmbalagem);
 
   	}
   }
