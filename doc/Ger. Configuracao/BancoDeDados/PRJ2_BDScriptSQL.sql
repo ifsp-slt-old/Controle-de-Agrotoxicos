@@ -75,9 +75,9 @@ CREATE TABLE IF NOT EXISTS `entrada` (
   `dataEntrada` datetime NOT NULL,
   `qtdAtualEntrada` float unsigned NOT NULL,
   `stattusUsoEntrada` char(1) NOT NULL,
-  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL
-  PRIMARY KEY (`idEntrada`,`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`),
-  KEY `fk_Entrada_AgtxUnidade_idx` (`AgtxUnidade_idAgtxUnidade`,`AgtxUnidade_Fabricante_idFabricante`,`AgtxUnidade_Fornecedor_idFornecedor`,`AgtxUnidade_Embalagem_idEmbalagem`)
+  `AgtxUnidade_idAgtxUnidade` int(11) NOT NULL,
+  PRIMARY KEY (`idEntrada`,`AgtxUnidade_idAgtxUnidade`),
+  KEY `fk_Entrada_AgtxUnidade_idx` (`AgtxUnidade_idAgtxUnidade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -191,29 +191,29 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 -- Limitadores para a tabela `agtxunidade`
 --
-ALTER TABLE `agtxunidade`
-  ADD CONSTRAINT `fk_AgtxUnidade_Fabricante` FOREIGN KEY (`Fabricante_idFabricante`) REFERENCES `fabricante` (`idFabricante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_AgtxUnidade_Fornecedor1` FOREIGN KEY (`Fornecedor_idFornecedor`) REFERENCES `fornecedor` (`idFornecedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_AgtxUnidade_Embalagem1` FOREIGN KEY (`Embalagem_idEmbalagem`) REFERENCES `embalagem` (`idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ALTER TABLE `agtxunidade`
+ -- ADD CONSTRAINT `fk_AgtxUnidade_Fabricante` FOREIGN KEY (`Fabricante_idFabricante`) REFERENCES `fabricante` (`idFabricante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  -- ADD CONSTRAINT `fk_AgtxUnidade_Fornecedor1` FOREIGN KEY (`Fornecedor_idFornecedor`) REFERENCES `fornecedor` (`idFornecedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+   -- ADD CONSTRAINT `fk_AgtxUnidade_Embalagem1` FOREIGN KEY (`Embalagem_idEmbalagem`) REFERENCES `embalagem` (`idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `entrada`
 --
-ALTER TABLE `entrada`
-  ADD CONSTRAINT `fk_Entrada_AgtxUnidade1` FOREIGN KEY (`AgtxUnidade_idAgtxUnidade`) REFERENCES `agtxunidade` (`idAgtxUnidade`, `Fabricante_idFabricante`, `Fornecedor_idFornecedor`, `Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ -- ALTER TABLE `entrada`
+  -- ADD CONSTRAINT `fk_Entrada_AgtxUnidade1` FOREIGN KEY (`AgtxUnidade_idAgtxUnidade`) REFERENCES `agtxunidade` (`idAgtxUnidade`, `Fabricante_idFabricante`, `Fornecedor_idFornecedor`, `Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `retorno`
 --
-ALTER TABLE `retorno`
-  ADD CONSTRAINT `fk_Retorno_Saida1` FOREIGN KEY (`Saida_idSaida`, `Saida_Entrada_idEntrada`, `Saida_Entrada_AgtxUnidade_idAgtxUnidade`, `Saida_Entrada_AgtxUnidade_Fabricante_idFabricante`, `Saida_Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Saida_Entrada_AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `saida` (`idSaida`, `Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`, `Entrada_AgtxUnidade_Fabricante_idFabricante`, `Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Entrada_AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ -- ALTER TABLE `retorno`
+ -- ADD CONSTRAINT `fk_Retorno_Saida1` FOREIGN KEY (`Saida_idSaida`, `Saida_Entrada_idEntrada`, `Saida_Entrada_AgtxUnidade_idAgtxUnidade`, `Saida_Entrada_AgtxUnidade_Fabricante_idFabricante`, `Saida_Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Saida_Entrada_AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `saida` (`idSaida`, `Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`, `Entrada_AgtxUnidade_Fabricante_idFabricante`, `Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Entrada_AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `saida`
 --
-ALTER TABLE `saida`
-  ADD CONSTRAINT `fk_Saida_Entrada1` FOREIGN KEY (`Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`, `Entrada_AgtxUnidade_Fabricante_idFabricante`, `Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Entrada_AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `entrada` (`idEntrada`, `AgtxUnidade_idAgtxUnidade`, `AgtxUnidade_Fabricante_idFabricante`, `AgtxUnidade_Fornecedor_idFornecedor`, `AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Saida_Requisicao1` FOREIGN KEY (`Requisicao_idRequisicao`) REFERENCES `requisicao` (`idRequisicao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ALTER TABLE `saida`
+  -- ADD CONSTRAINT `fk_Saida_Entrada1` FOREIGN KEY (`Entrada_idEntrada`, `Entrada_AgtxUnidade_idAgtxUnidade`, `Entrada_AgtxUnidade_Fabricante_idFabricante`, `Entrada_AgtxUnidade_Fornecedor_idFornecedor`, `Entrada_AgtxUnidade_Embalagem_idEmbalagem`) REFERENCES `entrada` (`idEntrada`, `AgtxUnidade_idAgtxUnidade`, `AgtxUnidade_Fabricante_idFabricante`, `AgtxUnidade_Fornecedor_idFornecedor`, `AgtxUnidade_Embalagem_idEmbalagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  -- ADD CONSTRAINT `fk_Saida_Requisicao1` FOREIGN KEY (`Requisicao_idRequisicao`) REFERENCES `requisicao` (`idRequisicao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
