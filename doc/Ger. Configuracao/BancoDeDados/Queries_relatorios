@@ -1,0 +1,23 @@
+-- NAS TELAS HAVERÁ DOIS INPUTS DE DATA, SENDO ASSIM, É NECESSÁRIO Q O VALOR DE DATA DESSES CAMPOS SEJA PASSADO NA QUERY
+-- COMO NO BANCO A DATA É DO TIPO DATE, TALVEZ SEJA NECESSARIO UMA CONVERSÃO NO PHP (SÓ FAZER DATE($POST...))
+
+--ABAIXO SEGUEM ESCOPOS DAS QUERYS, PODE SER QUE PRECISEM DE ALGUMA ALTERAÇÃO
+--(NÃO HA DADOS NO DATABASE, ENTÃO NÃO CONSEGUI TESTAR DIREITO. *O MARCIO IRA PROVIDENCIAR ISSO*)
+
+--  RELATÓRIO DE ENTRADA
+SELECT agtxunidade.*, fornecedor.*, entrada.* from agtxunidade 
+inner join fornecedor on Fornecedor_idFornecedor = idFornecedor 
+inner join entrada on AgtxUnidade_idAgtxUnidade = idAgtxUnidade
+WHERE entrada.dataEntrada between '' and ''
+
+--  RELATÓRIO DE AGROTOXICO
+SELECT agtxunidade.*, embalagem.*, fabricante.* from agtxunidade 
+inner join embalagem on Embalagem_idEmbalagem = idEmbalagem
+inner join fabricante on Fabricante_idFabricante = idFabricante
+inner join entrada on AgtxUnidade_idAgtxUnidade = idAgtxUnidade
+WHERE entrada.dataEntrada between '' and ''
+
+--  RELATÓRIO DE STATUS
+SELECT agtxunidade.*,  entrada.* from agtxunidade 
+inner join entrada on AgtxUnidade_idAgtxUnidade = idAgtxUnidade
+WHERE entrada.dataEntrada between '' and ''
