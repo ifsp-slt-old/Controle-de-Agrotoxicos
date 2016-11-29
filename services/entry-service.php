@@ -13,21 +13,25 @@
           die();
       }
     }
-	
+
+    /*
+      salva nova entrada no banco
+    */
 	
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
       //realiza query
       $sql = $this->dbh->exec("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade, AgtxUnidade_Fabricante_idFabricante, AgtxUnidade_Fornecedor_idFornecedor, AgtxUnidade_Embalagem_idEmbalagem) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
         '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1', 'A', '$AgtxUnidade_idAgtxUnidade')");
      
-
-     //print_r($result);
       $this->dbh = null;
      
     }
 		
 
-   public function new_entry_embalagem($tipoEmbalagem, $unMedidaEmbalagem, $qtdMedidaEmbalagem){
+    /*
+      salva nova embalagem no banco
+    */
+    public function new_entry_embalagem($tipoEmbalagem, $unMedidaEmbalagem, $qtdMedidaEmbalagem){
       //realiza query
       $sql = $this->dbh->query("INSERT INTO embalagem(tipoEmbalagem, undMedidaEmbalagem, qtdMedidaEmbalagem) VALUES ('$tipoEmbalagem', '$unMedidaEmbalagem', '$qtdMedidaEmbalagem')");
 
@@ -62,7 +66,7 @@
 
       //Verifica se existe um erro no retorno da query
       if($sql){
-        echo "<script>alert("Fabricante cadastrado com sucesso");</script>";
+        echo '<script>alert("Fabricante cadastrado com sucesso");</script>';
       } else {
         echo '<script>alert("Erro ao cadastrar Fabricante");</script>';
       }
@@ -72,23 +76,22 @@
     }
 
     /*
-    	select para exibição na pagina com os agrotoxicos ja cadastrados, trazendo seus respectivos fornecedores, embalagens e fabricantes
+    	select para selecionar todos os agrotoxicos ja cadastrados
     */
     public function new_entry_get_agtx(){
       //realiza query
       $sql = $this->dbh->query("SELECT * FROM AgtxUnidade");
       $result = $sql->fetchAll();
-      // if($result){
-      //   echo "<script>alert("Fabricante cadastrado com sucesso");</script>";
-      // } else {
-      //   echo '<script>alert("Erro ao cadastrar Fabricante");</script>';
-      // }
       $this->dbh = null;
 
       return $result;
      
     }
 
+
+    /*
+      select para selecionar todos os fabricantes ja cadastrados
+    */
     public function do_new_entry_get_fabricante(){
       //realiza query
       $sql = $this->dbh->query("SELECT * FROM Fabricante");
@@ -99,6 +102,9 @@
      
     }
 
+    /*
+      select para selecionar todos os fornecedores ja cadastrados
+    */
     public function do_new_entry_get_fornecedor(){
       //realiza query
       $sql = $this->dbh->query("SELECT * FROM Fornecedor");
@@ -109,6 +115,9 @@
      
     }
 
+    /*
+      select para selecionar todas as embalagens ja cadastrados
+    */
     public function do_new_entry_get_embalagem(){
       //realiza query
       $sql = $this->dbh->query("SELECT * FROM Embalagem");
@@ -134,7 +143,7 @@ VALUES ('$nomeComercialAgtx', '$classeAplicacaoAgtx', '$principioAtivoAgtx', '$c
 
       $this->dbh = null;
       if($sql){
-        echo "<script>alert("Agrotoxico cadastrado com sucesso");</script>";
+        echo '<script>alert("Agrotoxico cadastrado com sucesso");</script>';
       } else {
         echo '<script>alert("Erro ao cadastrar Agrotoxico");</script>';
       }
