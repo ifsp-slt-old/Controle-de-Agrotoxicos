@@ -45,26 +45,26 @@
       //realiza query
       $sql = $this->dbh->query("INSERT INTO fornecedor(nomeFornecedor) VALUES ('$nomeFornecedor')");
 
+      //Verifica se existe um erro no retorno da query
       if($sql){
-        echo "sucesso.";
+        echo '<script>alert("Fornecedor cadastrado com sucesso");</script>';
       } else {
-        echo "erro";
+        echo '<script>alert("Erro ao cadastrar fornecedor");</script>';
       }
 
       $this->dbh = null;
 
-
-     
     }
 		
    public function new_entry_fabricante($nomeFabricante){
       //realiza query
       $sql = $this->dbh->query("INSERT INTO fabricante(nomeFabricante) VALUES ('$nomeFabricante')");
 
+      //Verifica se existe um erro no retorno da query
       if($sql){
-        echo "sucesso.";
+        echo "<script>alert("Fabricante cadastrado com sucesso");</script>";
       } else {
-        echo "erro";
+        echo '<script>alert("Erro ao cadastrar Fabricante");</script>';
       }
       
       $this->dbh = null;
@@ -78,6 +78,11 @@
       //realiza query
       $sql = $this->dbh->query("SELECT * FROM AgtxUnidade");
       $result = $sql->fetchAll();
+      // if($result){
+      //   echo "<script>alert("Fabricante cadastrado com sucesso");</script>";
+      // } else {
+      //   echo '<script>alert("Erro ao cadastrar Fabricante");</script>';
+      // }
       $this->dbh = null;
 
       return $result;
@@ -126,10 +131,14 @@
        $sql = $this->dbh->exec("INSERT INTO AgtxUnidade(nomeComercialAgtx, classeAplicacaoAgtx, principioAtivoAgtx, concentracaoAgtx, formulacaoAgtx, statusAgtx, Fabricante_idFabricante,Fornecedor_idFornecedor, Embalagem_idEmbalagem) 
 VALUES ('$nomeComercialAgtx', '$classeAplicacaoAgtx', '$principioAtivoAgtx', '$concentracaoAgtx', '$formulacaoAgtx', '$statusAgtx', '$idFabricante', '$idFornecedor', '$idEmbalagem')");
       $result = $sql->fetch();
-       echo $result;
-       print_r($sql);
-       $this->dbh = null;
-      // echo '<script>location.reload();</script>';
+
+      $this->dbh = null;
+      if($sql){
+        echo "<script>alert("Agrotoxico cadastrado com sucesso");</script>";
+      } else {
+        echo '<script>alert("Erro ao cadastrar Agrotoxico");</script>';
+      }
+      echo '<script>location.reload();</script>';
 
 
     }
