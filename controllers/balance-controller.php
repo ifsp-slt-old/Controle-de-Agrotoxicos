@@ -21,9 +21,9 @@
 		  <tbody>";
 
 		  foreach ($rows as $r){
-		  	$dataEntrada = date("d/m/y", $r['dataEntrada']) ;
+		  	$dataEntrada = date("d/m/Y", strtotime($r['dataEntrada']));
 		  	$nomeAgtx = $r['nomeComercialAgtx'];
-		  	$dataNfEntrada = $r['dataNfEntrada'];
+		  	$dataNfEntrada = date("d/m/Y", strtotime($r['dataNfEntrada']));
 		  	$nomeFornecedor = $r['nomeFornecedor'];
   		  	echo "<tr> <td> $dataEntrada </td> <td> $nomeAgtx </td> <td> $dataNfEntrada</td> <td> $nomeFornecedor </td></tr>";
   		  } 
