@@ -45,7 +45,7 @@
      
     }
 	
-   public function new_entry_fornecedor($nomeFornecedor){
+    public function new_entry_fornecedor($nomeFornecedor){
       //realiza query
       $sql = $this->dbh->query("INSERT INTO fornecedor(nomeFornecedor) VALUES ('$nomeFornecedor')");
 

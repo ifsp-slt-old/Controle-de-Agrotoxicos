@@ -11,17 +11,24 @@
   text-align:center;
 }
 
-/* Modal Header */
+.balance-title{
+    font-size: 18px !important;
+    color: #3273dc !important;
+    cursor:pointer;    
+}
+
+.padding-20{
+    padding:20px;
+}
+
 .modal-header {
     padding: 2px 16px;
     background-color: #3273dc;
     color: white;
 }
 
-/* Modal Body */
 .modal-body {padding: 2px 16px;}
 
-/* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
     background-color: #3273dc;
@@ -29,7 +36,6 @@
     margin-top: 5px;
 }
 
-/* Modal Content */
 .modal-content {
     margin-top:5px;
     margin-bottom: 5px;

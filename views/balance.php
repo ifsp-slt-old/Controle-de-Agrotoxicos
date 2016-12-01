@@ -6,17 +6,35 @@
 		<script type="text/javascript" src="../js/balance.js"></script>
 	</head>
 	<body>
-		<?php include_once("partials/_header.php"); ?>
+		<?php 
+			include_once("partials/_header.php");
+			include_once("../controllers/balance-controller.php");
+			$controller = new BalanceController();
+			
+		 ?>
 
-    <div class="container margin-top-20">
-			<span class="title"><h3>Relátorios</h3></span>
-			<span onclick="showEntry()">Entradas</span>
-			<div id="entry" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
-			</br>
-			<span onclick="showDropoff()">Saidas</span>
-			<div id="dropoff" style="display:none"><?php include_once("partials/_balance-entry.php"); ?></div>
-    </div>
+	<form class="form padding-20" action="" method="POST">
+		<div class="columns" >
+			<div class="column">
+				<label class="label"> Data final </label>
+				<input type="date" class="input" name="initialDate">
+			</div>
+			<div class="column">
+				<label class="label"> Data final </label>
+				<input type="date" class="input" name="finalDate">
+			</div>
+		</div>	
+	    <button class="button is-info column" type="submit" style="width:100%;">
+            Mostrar Relatorio	
+	    </button>
+	</form>	
 
 	</body>
+
+    <?php
+    	if(!empty($_POST)){
+			$rows = $controller->get_entry_balance($_POST['initialDate'], $_POST['finalDate']);
+    	}
+  ?>
 
 </html>
