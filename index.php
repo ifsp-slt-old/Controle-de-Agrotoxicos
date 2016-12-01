@@ -59,7 +59,7 @@
 		    ?>
 
 	        <span class="nav-item">
-		      <a class="button is-info" href="help.php">
+		      <a class="button is-info" href="views/help.php">
 		        <span>Ajuda</span>
 		      </a>
 		    </span>

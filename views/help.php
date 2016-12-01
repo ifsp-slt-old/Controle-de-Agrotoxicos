@@ -5,10 +5,63 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="../node_modules/vanilla-masker/lib/vanilla-masker.js"></script>
     <script src="../lib/jsmodal-1.0d.min.js"></script>
-	</header>
+	</head>
 	<body>
-  <li>
-    
-  </li>
-
+    <?php include_once("partials/_header.php"); ?>
+  <div class="box margin-top-20">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>Como cadastrar uma nova Entrada?</strong>
+            <br>
+            Para cadastrar um nova Entrada você precisa ter permissão de nivel E.
+            Com a permissâo concedida, basta ir até o menu superior e escolher a opção de Nova Entrada e clicar no botão Novo Agrotoxico. Após isso basta concluir o cadastro preenchendo o formulario e clicando em Gerar Nova Entrada.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+ <div class="box margin-top-20">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>Como cadastrar uma nova Embalagem?</strong>
+            <br>
+            Para cadastrar uma nova Embalagem você precisa ter permissão de nivel E.
+            Com a permissâo concedida, basta ir até o menu superior e escolher a opção de Nova Embalagem. Após isso basta concluir o cadastro preenchendo o formulario e clicando em Criar Embalagem.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+   <div class="box margin-top-20">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>Como cadastrar um novo Fornecedor?</strong>
+            <br>
+            Para cadastrar um novo agrotoxico você precisa ter permissão de nivel E.
+            Com a permissâo concedida, basta ir até o menu superior e escolher a opção de Novo Fornecedor. Após isso basta concluir o cadastro preenchendo o formulario e clicando em Criar Fornecedor.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+   <div class="box margin-top-20">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>Como cadastrar um novo Fabricante?</strong>
+            <br>
+            Para cadastrar um novo agrotoxico você precisa ter permissão de nivel E.
+            Com a permissâo concedida, basta ir até o menu superior e escolher a opção de Novo Fabricante. Após isso basta concluir o cadastro preenchendo o formulario e clicando em Criar Fabricante.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
 </html>
