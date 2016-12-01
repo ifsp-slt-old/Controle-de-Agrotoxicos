@@ -51,6 +51,11 @@
       }
     ?>
 
+    <span class="nav-item">
+      <a class="button is-info" href="help.php">
+        <span>Ajuda</span>
+      </a>
+    </span>
 
     <span class="nav-item">
       <a class="button is-info" href="../controllers/logout-controller.php">
