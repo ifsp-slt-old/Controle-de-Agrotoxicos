@@ -23,6 +23,9 @@
 		  <div class="nav-right nav-menu">
 
 		    <?php
+		      if(!$_SESSION['permissaoUsuario']){
+	    		echo '<script>window.location.href = "views/login.php";</script>';
+	          }
 		      if($_SESSION['permissaoUsuario'] == 'E'){
 		        echo '<a class="nav-item" href="views/new-entry.php">
 		                Nova Entrada
