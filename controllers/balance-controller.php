@@ -2,6 +2,11 @@
   include_once("../services/balance-service.php"); 	
   class BalanceController{
 
+    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
+
   	public function get_entry_balance($initialDate, $finalDate) {
   		$service = new BalanceService();
   		$rows = $service->get_entry_balance($initialDate, $finalDate);

@@ -1,6 +1,9 @@
 <?php
   class Saida {
-
+    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
     private $tipoSaida;
     private $dataSaida;
     private $pesoSaida;

@@ -1,6 +1,9 @@
 <?php
   class Usuario {
-
+    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
     private $nomeUsuario;
     private $loginUsuario;
     private $senhaUsuario;

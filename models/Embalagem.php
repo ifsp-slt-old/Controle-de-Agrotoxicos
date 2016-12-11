@@ -1,6 +1,9 @@
 <?php
   class Embalagem {
-
+    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
     private $tipoEmbalagem;
     private $undMedidaEmbalagem;
     private $qtdMedidaEmbalagem;

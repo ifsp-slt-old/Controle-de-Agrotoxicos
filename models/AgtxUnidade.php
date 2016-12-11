@@ -1,6 +1,11 @@
 <?php
   class AgtxUnidade {
 
+    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
+
     private $nomeComercialAgtx;
     private $classeAplicacaoAgtx;
     private $principioAtivoAgtx;

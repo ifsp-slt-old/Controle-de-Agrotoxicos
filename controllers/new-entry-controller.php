@@ -3,7 +3,12 @@
   include_once("../services/entry-service.php");
   
   class NewEntryController{
+		  /*------------
+	  @_AndreOliveira
+	  @_EduardoPedroso
+	  */
 	  
+	  // Cria nova entrada
 	  public function do_new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $idAgtx){
 	
 		  //instancia serviço		
@@ -13,7 +18,7 @@
 	  
 	  }
 	  
-	  
+	  // Cria nova embalagem
 	  public function do_new_entry_embalagem($tipoEmbalagem, $unMedEmbalagem, $qtdMedEmbalagem){
 	
 		  //instancia serviço		
@@ -23,6 +28,7 @@
 	  
 	  }
 	  
+	  // Cria novo fornecedor
 	  public function do_new_entry_fornecedor($nomeFornecedor){
 	
 		  //instancia serviço		
@@ -32,7 +38,8 @@
 	  
 	  }
 	  
-	 public function do_new_entry_fabricante($nomeFabricante){
+	  // Cria novo fabricante
+	  public function do_new_entry_fabricante($nomeFabricante){
 	
 		  //instancia serviço		
 	   	  $service = new EntryService();
@@ -46,6 +53,7 @@
 	  Funções de SELECT
 	  */
 	  
+	  // Seleciona agrotoxicos
 	  public function do_new_entry_get_agtx(){
 		
 		  //instancia serviço		
@@ -54,7 +62,7 @@
 	      return $service->new_entry_get_agtx();
 
 	  }
-	  
+	  // Seleciona fornecedores
   	  public function do_new_entry_get_fornecedor(){
 		
 		  //instancia serviço		
@@ -63,7 +71,7 @@
 	      return $service->do_new_entry_get_fornecedor();
 	      		
 	  }
-
+	  // Seleciona embalagens
   	  public function do_new_entry_get_embalagem(){
 		
 		  //instancia serviço		
@@ -72,7 +80,7 @@
 	      return $service->do_new_entry_get_embalagem();
 	      		
 	  }
-
+	  //Seleciona fabricantes
 	  public function do_new_entry_get_fabricante(){
 		
 		  //instancia serviço		

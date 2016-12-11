@@ -1,6 +1,8 @@
 <?php
   class BalanceService{
-
+    /*------------
+    @_EduardoPedroso
+    */
 	private $dbh;
 	
     function __construct(){

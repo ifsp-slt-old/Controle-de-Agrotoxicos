@@ -1,7 +1,10 @@
 <?php
 
 	class EntryService{
-		
+		    /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
 	private $dbh;
 	
     function __construct(){
@@ -21,7 +24,7 @@
     public function new_entry($receitaEntrada, $nfNumEntrada, $dataNfEntrada, $dataFabEntrada, $dataValEntrada, $dataEntrada, $qtdAtualEntrada, $stattusUsoEntrada, $AgtxUnidade_idAgtxUnidade){
       //realiza query
       $sql = $this->dbh->exec("INSERT INTO Entrada(receitaEntrada, nfNumEntrada, dataNfEntrada, dataFabEntrada, dataValEntrada, dataEntrada, qtdAtualEntrada, stattusUsoEntrada, AgtxUnidade_idAgtxUnidade, AgtxUnidade_Fabricante_idFabricante, AgtxUnidade_Fornecedor_idFornecedor, AgtxUnidade_Embalagem_idEmbalagem) VALUES ('$receitaEntrada', '$nfNumEntrada', '$dataNfEntrada', 
-        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1', 'A', '$AgtxUnidade_idAgtxUnidade')");
+        '$dataFabEntrada', '$dataValEntrada', '$dataEntrada', '1', 'A', '$AgtxUnidade_idAgtxUnidade', '1', '1', '1')");
      
       $this->dbh = null;
      
@@ -44,7 +47,10 @@
       $this->dbh = null;
      
     }
-	
+
+    /*
+      salva novo fornecedor no banco
+    */
     public function new_entry_fornecedor($nomeFornecedor){
       //realiza query
       $sql = $this->dbh->query("INSERT INTO fornecedor(nomeFornecedor) VALUES ('$nomeFornecedor')");
@@ -60,7 +66,10 @@
 
     }
 		
-   public function new_entry_fabricante($nomeFabricante){
+    /*
+      salva novo fabricante no banco
+    */
+    public function new_entry_fabricante($nomeFabricante){
       //realiza query
       $sql = $this->dbh->query("INSERT INTO fabricante(nomeFabricante) VALUES ('$nomeFabricante')");
 

@@ -1,5 +1,9 @@
 <?php
   class Entrada {
+        /*------------
+    @_AndreOliveira
+    @_EduardoPedroso
+    */
     private $receitaEntrada;
     private $nfNumEntrada;
     private $dataNfEntrada;

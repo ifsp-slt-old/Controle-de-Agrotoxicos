@@ -1,3 +1,7 @@
+/*------------
+@_EduardoPedroso
+@_PedroPaes
+*/
 const showEntry = () => { //Mostra relatorio de entrada
   let entry = document.getElementById('entry');
   if(entry.style.display === "none"){

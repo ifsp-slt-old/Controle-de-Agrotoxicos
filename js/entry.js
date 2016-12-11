@@ -1,3 +1,7 @@
+/*------------
+@_EduardoPedroso
+*/
+
 //Seleciona os inputs da tela
 var dataNfEntrada = document.querySelector('input[name="dataNfEntrada"]');
 var dataEntrada = document.querySelector('input[name="dataEntrada"]');

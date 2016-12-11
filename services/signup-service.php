@@ -1,6 +1,8 @@
 <?php
   class SignupService{
-    
+        /*------------
+    @_AndreOliveira
+    */
     function __construct(){
       try {
           //Faz conexao com o banco

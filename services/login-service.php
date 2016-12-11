@@ -2,7 +2,9 @@
   session_start();
 
   class LoginService{
-
+    /*------------
+    @_AndreOliveira
+    */
     private $dbh;
 
     function __construct(){

@@ -3,6 +3,10 @@
 
   class NewFornecedorController{
 
+    /*------------
+	@_EduardoPedroso
+	*/
+
   	public function new_entry_fornecedor($nomeFornecedor){
 
   		$service = new EntryService();
